@@ -98,7 +98,7 @@ func main() {
 				panic("Некорректное второе число")
 			}
 		} else {
-			panic"Некорректный ввод чисел")
+			panic("Некорректный ввод чисел")
 		}
 
 		result := calculate(a, b, op)
