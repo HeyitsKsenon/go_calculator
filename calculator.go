@@ -78,8 +78,7 @@ func main() {
 		// Разбиваем строку на части
 		parts := strings.Fields(input)
 		if len(parts) != 3 {
-			fmt.Println("Некорректный ввод. Попробуйте еще раз.")
-			continue
+			panic("Некорректный ввод.")
 		}
 
 		aStr, op, bStr := parts[0], parts[1], parts[2]
@@ -100,8 +99,7 @@ func main() {
 				continue
 			}
 		} else {
-			fmt.Println("Некорректный ввод чисел")
-			continue
+			panic"Некорректный ввод чисел")
 		}
 
 		result := calculate(a, b, op)
