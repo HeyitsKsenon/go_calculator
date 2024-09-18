@@ -95,8 +95,7 @@ func main() {
 			if numB, err := strconv.Atoi(bStr); err == nil && numB >= 1 && numB <= 10 {
 				b = numB
 			} else {
-				fmt.Println("Некорректное второе число")
-				continue
+				panic("Некорректное второе число")
 			}
 		} else {
 			panic"Некорректный ввод чисел")
