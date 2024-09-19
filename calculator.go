@@ -101,10 +101,14 @@ func main() {
   var a, b int
   var isRomanInput bool
 
-  if isRoman(aStr) && isRoman(bStr) {
+  if isRoman(aStr) && isRoman(bStr)  {
    a = romanToArabic(aStr)
    b = romanToArabic(bStr)
-   isRomanInput = true
+   if a <= 10 && b <= 10 {
+       isRomanInput = true
+   } else {
+    panic("Некорректный ввод чисел.")
+  }
   } else if numA, err := strconv.Atoi(aStr); err == nil && numA >= 1 && numA <= 10 {
    a = numA
    if numB, err := strconv.Atoi(bStr); err == nil && numB >= 1 && numB <= 10 {
@@ -118,7 +122,7 @@ func main() {
 
   result := calculate(a, b, op)
 
-  if isRomanInput || result < 101 {
+  if isRomanInput {
    if result < 1 || result > 100 {
     panic(fmt.Sprintf("Результат вне диапазона для римских чисел: %d", result))
    }
